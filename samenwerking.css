@@ -1,0 +1,108 @@
+/* Samenwerking Section */
+.samenwerking {
+    padding: 60px 0;
+    background-color: #f9fafb; /* Licht neutraal achtergrondkleur */
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px; /* Grotere ruimte tussen de secties voor een moderne look */
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle-container {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Donkerdere schaduw voor meer diepte */
+    background: linear-gradient(135deg, #4CAF50, #2F9E44); /* Duurzame groene gloed */
+}
+
+.round-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.round-img:hover {
+    transform: scale(1.05); /* Klein zoom-effect voor een futuristisch gevoel */
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #2F9E44;
+    display: block;
+    margin: 10px auto 0;
+}
+
+.logo-section {
+    flex: 2;
+}
+
+.logo-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Twee kolommen layout */
+    gap: 40px; /* Ruimte tussen de logo's */
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.column img {
+    max-width: 120px; /* Beperk de grootte van de logo's voor een strakke look */
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    filter: grayscale(50%); /* Grayscale voor een moderne look */
+}
+
+.column img:hover {
+    transform: scale(1.1); /* Logo vergroting bij hover */
+    filter: grayscale(0%); /* Kleur terughalen bij hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Schaduw voor een modern effect */
+}
+
+/* Responsieve aanpassing voor kleinere schermen */
+@media (max-width: 768px) {
+    .logo-columns {
+        grid-template-columns: 1fr; /* Zet logo's onder elkaar op mobiele schermen */
+    }
+
+    .circle-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .column img {
+        max-width: 100px; /* Kleiner maken van logo's op mobiel */
+    }
+}

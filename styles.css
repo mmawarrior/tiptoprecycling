@@ -1,0 +1,114 @@
+/* Global styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #A5E6A1;
+    padding: 10px 0;
+}
+
+.header-top {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #333;
+    padding: 5px 0;
+    background-color: #A5E6A1;
+}
+
+.logo-text {
+    text-decoration: none;
+}
+
+/* Navigatiebalk */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtiele schaduw voor diepte */
+}
+
+/* Logo */
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo-img {
+    width: 50px; /* Logo-formaat */
+    height: auto;
+    margin-right: 10px;
+}
+
+nav .logo-text {
+    font-weight: 700;
+    font-size: 28px;
+    color: #28a745; /* Duurzaam groen */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header__logo img {
+    height: 50px; /* Groter logo voor een prominente plek */
+}
+
+.header__menu {
+    display: flex;
+    gap: 40px;
+}
+
+.header__menu li {
+    list-style: none;
+}
+
+.header__menu li a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.header__logo a {
+    text-decoration: none; /* Verwijdert de onderstreping van de link */
+}
+
+.header__logo a:hover {
+    text-decoration: none; /* Zorgt ervoor dat er bij hover ook geen onderstreping is */
+}
+
+
+.header__menu li a:hover {
+    color: #48C774;
+}
+
+.header__menu li a:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #48C774;
+    bottom: -5px;
+    left: 0;
+}
+
+/* Call to action button in header */
+.contact-info {
+    font-size: 1rem;
+    color: #48C774;
+    font-weight: bold;
+}
+
+

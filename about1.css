@@ -1,0 +1,98 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.about-section {
+    padding: 60px 20px; /* Compacter, maar toch ruimtelijk */
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Zorgt voor flexibele layout bij kleinere schermen */
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px; /* Zorgt voor ruimte tussen tekst en afbeelding */
+}
+
+.about-text {
+    flex: 1;
+    padding-right: 20px;
+    max-width: 600px; /* Houdt tekstsectie compacter */
+}
+
+.about-text h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #6CB84B;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.about-text h1 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.about-text p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6; /* Meer witruimte tussen de regels */
+    margin-bottom: 15px;
+}
+
+/* Circle Image Styling */
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Verander de grootte naar wens */
+    height: 300px;
+    border-radius: 50%; /* Maakt het element rond */
+    overflow: hidden; /* Verberg de randen buiten de cirkel */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Subtiele schaduw voor elegantie */
+    margin: 0 auto; /* Centreert de cirkel */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Optionele hover-effecten */
+}
+
+.circle-container:hover {
+    transform: scale(1.05); /* Vergroot de cirkel bij hover */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2); /* Grotere schaduw bij hover */
+}
+
+.circle-image {
+    width: 100%; /* Zorgt ervoor dat de afbeelding de cirkel volledig vult */
+    height: 100%;
+    object-fit: cover; /* Zorgt ervoor dat de afbeelding goed binnen de cirkel past */
+}
+
+/* Responsive voor mobiele apparaten */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Zorgt ervoor dat de elementen onder elkaar komen te staan */
+        text-align: center;
+    }
+
+    .about-text {
+        padding-right: 0;
+        max-width: 100%;
+    }
+
+    .about-image {
+        margin-bottom: 30px;
+    }
+
+    .circle-container {
+        width: 250px; /* Kleiner voor mobiele apparaten */
+        height: 250px;
+    }
+}

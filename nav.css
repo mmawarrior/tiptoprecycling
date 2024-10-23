@@ -1,0 +1,117 @@
+/* Navigatiebalk */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtiele schaduw voor diepte */
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Logo */
+nav .logo {
+    display: flex;
+    align-items: center; /* Zorgt ervoor dat logo en tekst verticaal gecentreerd zijn */
+    gap: 10px; /* Voeg wat ruimte toe tussen het logo en de tekst */
+}
+
+nav .logo-img {
+    width: 50px;
+    height: auto;
+}
+
+nav .logo-text {
+    font-weight: 700;
+    font-size: 28px;
+    color: #28a745;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1;
+}
+
+.header__logo img {
+    height: 50px; /* Groter logo voor een prominente plek */
+}
+
+.header__menu {
+    display: flex;
+    gap: 40px;
+}
+
+.header__menu li {
+    list-style: none;
+}
+
+.header__menu li a:hover::after,
+.header__menu li a.active::after {
+    content: '';
+    position: absolute;
+    width: 100%; /* Breedte wordt nu gelijk aan de tekst */
+    height: 2px;
+    background-color: #48C774;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.header__menu li a:hover,
+.header__menu li a.active {
+    color: #48C774;
+}
+
+/* Hamburger Menu voor Mobiel */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .header__menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: right; /* Zorgt ervoor dat de tekst rechts uitgelijnd wordt */
+    }
+
+    .header__menu li {
+        margin: 10px 0;
+    }
+
+    .header__menu li a {
+        padding-right: 20px; /* Voeg ruimte toe rechts om de tekst verder naar rechts te duwen */
+    }
+
+    .header__menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Scroll Animatie */
+.active-link {
+    color: #48C774 !important;
+    font-weight: bold;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}

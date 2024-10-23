@@ -1,0 +1,126 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Workflow Section */
+.workflow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Zorgt dat het bovenaan begint */
+    padding: 60px 80px; /* Iets minder padding voor een compactere layout */
+    background-color: #fff;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px; /* Voegt ruimte toe tussen de tekst en cirkelsectie */
+}
+
+.text-section {
+    flex: 1;
+    margin-right: 20px;
+    max-width: 60%; /* Zorgt dat de tekst wat meer opzij wordt gezet */
+}
+
+.text-section h2 {
+    font-size: 2.2rem; /* Kleinere koptekst voor een subtielere uitstraling */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.text-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.8; /* Meer lijnhoogte voor luchtigheid */
+}
+
+.circle-section {
+    flex: 0.4; /* Zorgt dat de cirkelsectie minder ruimte inneemt */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Zorgt voor een gelijkmatige ruimte tussen cirkels */
+}
+
+.circle-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Werk de .circle bij voor een compactere weergave */
+.circle {
+    width: 200px; /* Iets kleinere cirkel */
+    height: 200px; /* Iets kleinere cirkel */
+    background-color: #A5E6A1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/* Update de .circle-item p */
+.circle-item p {
+    font-size: 0.9rem; /* Kleiner lettertype voor de tekst */
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Pas de pijlen aan voor de nieuwe lay-out */
+.circle-item::after {
+    content: '\25BC'; /* Unicode voor neerwaartse pijl */
+    font-size: 1.2rem;
+    color: #A5E6A1;
+    position: absolute;
+    bottom: -20px; /* Plaats de pijl dichterbij de cirkel */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Verwijder de pijl van het laatste item */
+.circle-item:last-child::after {
+    display: none;
+}
+
+/* Responsive styling voor kleinere schermen */
+@media (max-width: 768px) {
+    .workflow {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+    }
+
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .text-section {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .circle-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
