@@ -5,67 +5,77 @@ body {
     background-color: #f4f4f4;
 }
 
-.about-section {
-    padding: 80px 20px;
-    background-color: #edf7f3;
+.modern-about-section {
+    background-color: #f8fafc;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     overflow: hidden;
 }
 
-.container {
+.about-container {
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     max-width: 1200px;
-    margin: 0 auto;
-    gap: 40px;
-    position: relative;
-    z-index: 1;
+    width: 100%;
+    gap: 60px;
 }
 
-.about-text {
+.about-content {
     flex: 1;
-    max-width: 600px;
     padding-right: 20px;
-    animation: fadeInUp 1s ease-in-out;
+    z-index: 1;
+    animation: slideInLeft 1.2s ease-in-out;
 }
 
-@keyframes fadeInUp {
-    0% {
+@keyframes slideInLeft {
+    from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateX(-50px);
     }
-    100% {
+    to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
-.about-text h2 {
-    font-size: 1.5rem;
-    text-transform: uppercase;
+.highlight-title {
+    font-size: 1.2rem;
     color: #34a853;
-    font-weight: 700;
+    text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
-.about-text h1 {
+.main-title {
     font-size: 3rem;
     color: #333;
     font-weight: 700;
-    margin-bottom: 20px;
     line-height: 1.2;
+    margin-bottom: 20px;
 }
 
-.about-text p {
-    font-size: 1.2rem;
+.description {
+    font-size: 1.1rem;
     color: #555;
     line-height: 1.8;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
 }
 
-/* Visual element */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Right side visual element */
 .about-visual {
     flex: 1;
     display: flex;
@@ -89,8 +99,8 @@ body {
 
 .visual-bg {
     position: relative;
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
     background-color: #e0f7ea;
     border-radius: 50%;
     overflow: hidden;
@@ -110,28 +120,17 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: rotateImage 8s infinite alternate ease-in-out;
 }
 
-@keyframes rotateImage {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(5deg);
-    }
-}
-
-/* Responsieve styling voor mobiele apparaten */
+/* Responsieve aanpassingen */
 @media (max-width: 768px) {
-    .container {
+    .about-container {
         flex-direction: column;
         text-align: center;
     }
 
-    .about-text {
+    .about-content {
         padding-right: 0;
-        max-width: 100%;
     }
 
     .visual-bg {

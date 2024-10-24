@@ -1,7 +1,7 @@
 /* Samenwerking Section */
 .samenwerking {
     padding: 60px 0;
-    background-color: #f9fafb; /* Licht neutraal achtergrondkleur */
+    background-color: #f9fafb;
     text-align: center;
     font-family: 'DM Sans', sans-serif;
 }
@@ -12,7 +12,7 @@
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 60px; /* Grotere ruimte tussen de secties voor een moderne look */
+    gap: 60px;
 }
 
 .image-section {
@@ -23,12 +23,18 @@
 }
 
 .circle-container {
-    width: 220px;
-    height: 220px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Donkerdere schaduw voor meer diepte */
-    background: linear-gradient(135deg, #4CAF50, #2F9E44); /* Duurzame groene gloed */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background: linear-gradient(135deg, #4CAF50, #2F9E44);
+}
+
+.circle-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
 }
 
 .round-img {
@@ -39,7 +45,7 @@
 }
 
 .round-img:hover {
-    transform: scale(1.05); /* Klein zoom-effect voor een futuristisch gevoel */
+    transform: scale(1.05);
 }
 
 .section-title {
@@ -66,8 +72,8 @@
 
 .logo-columns {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Twee kolommen layout */
-    gap: 40px; /* Ruimte tussen de logo's */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
 }
 
 .column {
@@ -78,23 +84,23 @@
 }
 
 .column img {
-    max-width: 120px; /* Beperk de grootte van de logo's voor een strakke look */
+    max-width: 120px;
     height: auto;
     object-fit: contain;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    filter: grayscale(50%); /* Grayscale voor een moderne look */
+    filter: grayscale(50%);
 }
 
 .column img:hover {
-    transform: scale(1.1); /* Logo vergroting bij hover */
-    filter: grayscale(0%); /* Kleur terughalen bij hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Schaduw voor een modern effect */
+    transform: scale(1.1);
+    filter: grayscale(0%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsieve aanpassing voor kleinere schermen */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .logo-columns {
-        grid-template-columns: 1fr; /* Zet logo's onder elkaar op mobiele schermen */
+        grid-template-columns: 1fr;
     }
 
     .circle-container {
@@ -103,6 +109,6 @@
     }
 
     .column img {
-        max-width: 100px; /* Kleiner maken van logo's op mobiel */
+        max-width: 100px;
     }
 }
