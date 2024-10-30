@@ -13,36 +13,42 @@
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="samenwerking.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="popup.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 <body>
     <header>
         <div class="header-top">
             <p>Wij helpen je met het recyclen van alle hardware, zodat jij sociaal kan bijdragen.</p>
             <div class="contact-info">
-                <a href="tel:0850037000">050 206 4059</a>
+                <a href="tel:050 206 4059">050 206 4059</a>
             </div>
         </div>
-        <nav class="navbar">
-            <div class="header__logo">
-                <a href="#top" class="logo">
-                    <img src="./img/logo.png" alt="Logo" class="logo-img">
-                    <span class="logo-text">TIPTOP RECYCLING</span>
-                </a>
-            </div>
-            <ul class="header__menu">
-                <li><a href="#wat-we-doen">wat we doen</a></li>
-                <li><a href="#over-ons">over ons</a></li>
-                <li><a href="#klanten">klanten</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-        </nav>
-    </header>
+        <!-- Wrapper voor de sticky navbar -->
+        <div class="navbar-wrapper">
+            <nav class="navbar">
+                <div class="header__logo">
+                    <a href="#top" class="logo">
+                        <img src="./img/logo.png" alt="Logo" class="logo-img">
+                        <span class="logo-text">TIPTOP RECYCLING</span>
+                    </a>
+                </div>
+                <ul class="header__menu">
+                    <li><a href="#wie-zijn-we">Wie zijn we?</a></li>
+                    <li><a href="#over-ons">Over ons</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </nav>
+        </div>
+    </header> 
     
     <section class="hero">
         <div class="overlay"></div> <!-- Overlay voor een donkere tint over de afbeelding -->
@@ -56,10 +62,9 @@
             </div>
         </div>
     </section>
-    
-    <!-- Circle Section -->
+ 
 <!-- Circle Section -->
-<section class="workflow">
+<section id="wie-zijn-we" class="workflow">
     <div class="content-container">
         <div class="text-section">
             <h2>Bij TipTop halen we alles uit je oude laptop. Laat je laptop recyclen en draag bij aan een duurzamere planeet.</h2>
@@ -83,7 +88,7 @@
 </section>
 
 <!-- About Section -->
-<section class="about-section">
+<section id="over-ons" class="about-section">
     <div class="container">
         <div class="about-visual">
             <div class="visual-bg">
@@ -119,7 +124,7 @@
 </section>
 
 <!-- Samenwerking Section -->
-<section class="samenwerking">
+<section id="partners" class="samenwerking">
     <div class="content-container">
         <div class="image-section">
             <div class="circle-container">
@@ -148,17 +153,17 @@
     </div>
 </section>
 
-<!-- Contact Section -->
-<section class="contact">
-    <div class="content-container">
+<section id="contact" class="contact">
+    <div class="content-container-contact">
         <div class="contact-info">
             <h2>Neem contact met ons op</h2>
-            <p><i class="fas fa-phone-alt"></i> 050 206 4059</p>
-            <p><i class="fas fa-envelope"></i> info@tiptoprecycling.nl</p>
+            <p><i class="fas fa-phone-alt"></i>050 206 4059</p>
+            <p><i class="fas fa-envelope"></i>info@tiptoprecycling.nl</p>
             <p><i class="fas fa-map-marker-alt"></i> Protonstraat 3A, 9743 AL Groningen</p>
         </div>
         <div class="contact-form">
-            <form action="#" method="POST">
+            <h2>Contactformulier</h2>
+            <form id="contactForm" action="./contact.php" method="POST">
                 <div class="input-group">
                     <label for="name">Naam</label>
                     <input type="text" id="name" name="name" placeholder="Je naam" required>
@@ -175,14 +180,19 @@
             </form>
         </div>
     </div>
+</section>
+
+<!-- Pop-up bevestiging -->
+<div id="popup" class="popup">
+    <p>Je bericht is succesvol verstuurd!</p>
+    <button onclick="closePopup()">Sluiten</button>
+</div>
 
     <!-- Google Map Section, placed below the contact details -->
     <div class="map-container">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.5268946096637!2d6.53302771586955!3d53.22679827994964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c9e3d15e7f37fb%3A0x9bcd70b172d14f83!2sProtonstraat%203A%2C%209743%20AL%20Groningen!5e0!3m2!1sen!2snl!4v1698337086472!5m2!1sen!2snl" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
 </section>
-
-
 
 <!-- Footer Section -->
 <footer>

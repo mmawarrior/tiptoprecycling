@@ -9,10 +9,11 @@
 .content-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center; /* Zorgt ervoor dat de items verticaal gecentreerd worden */
     max-width: 1200px;
     margin: 0 auto;
     gap: 60px;
+    flex-wrap: wrap; /* Voegt wrapping toe voor kleinere schermen */
 }
 
 .image-section {
@@ -66,13 +67,17 @@
     margin: 10px auto 0;
 }
 
+/* Logo Section */
 .logo-section {
     flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Zorgt ervoor dat logo's gecentreerd worden */
 }
 
 .logo-columns {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Twee kolommen */
     gap: 40px;
 }
 
@@ -99,13 +104,23 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .logo-columns {
-        grid-template-columns: 1fr;
+    .content-container {
+        flex-direction: column;
+    }
+
+    .logo-section {
+        display: flex;
+        justify-content: center;
     }
 
     .circle-container {
         width: 150px;
         height: 150px;
+    }
+
+    .logo-columns {
+        grid-template-columns: 1fr 1fr; /* Twee kolommen voor kleine schermen */
+        grid-template-rows: repeat(4, auto);
     }
 
     .column img {

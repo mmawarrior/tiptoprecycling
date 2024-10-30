@@ -1,0 +1,55 @@
+.popup {
+    display: none; /* Verberg standaard */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 1); /* Zorg voor een duidelijke achtergrondkleur */
+    color: #000; /* Zwarte tekst voor leesbaarheid */
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Iets zwaardere schaduw voor beter contrast */
+    z-index: 9999; /* Zorg dat de popup boven andere elementen staat */
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0; /* Start met onzichtbaarheid */
+    visibility: hidden; /* Verberg visueel */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Voeg zichtbaarheidsovergang toe */
+    max-width: 400px; /* Beperk de breedte van de popup */
+    width: 100%; /* Zorg dat het responsief is */
+}
+
+.popup.show {
+    display: block; /* Maak de pop-up zichtbaar */
+    opacity: 1; /* Volledig zichtbaar maken */
+    visibility: visible; /* Zichtbaar maken */
+}
+
+.popup button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease; /* Maak de hover effect zachter */
+    width: 100%; /* Zorg dat de knop de volledige breedte inneemt op kleine schermen */
+    max-width: 200px; /* Max breedte voor knop */
+}
+
+.popup button:hover {
+    background-color: #555;
+}
+
+/* Media query voor kleinere schermen */
+@media (max-width: 768px) {
+    .popup {
+        width: 90%; /* Zorg dat de pop-up 90% van de schermbreedte inneemt op kleine schermen */
+        padding: 15px; /* Iets minder padding voor kleinere schermen */
+    }
+
+    .popup button {
+        width: 100%; /* De knop neemt de volle breedte in */
+        padding: 12px; /* Iets grotere padding voor gebruiksgemak op mobiele apparaten */
+    }
+}
