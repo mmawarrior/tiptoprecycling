@@ -1,11 +1,11 @@
  /* Desktop Navigatiebalk (Sticky vanaf de volledige header) */
 @media (min-width: 769px) {
     header {
-        position: sticky;
+        position: relative;
         top: 0;
         z-index: 999;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Zachtere schaduw voor een mooiere diepte */
-    }
+        padding: 0;
+     }
 }
 
 /* Navigatiebalk */
