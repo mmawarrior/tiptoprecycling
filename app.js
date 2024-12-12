@@ -1,35 +1,37 @@
 // Hamburger Menu toggle
 const hamburger = document.getElementById('hamburger');
 const menu = document.querySelector('.header__menu');
+const menuLinks = document.querySelectorAll('.header__menu li a');
 
 hamburger.addEventListener('click', () => {
     menu.classList.toggle('active');
     hamburger.classList.toggle('active');
 });
 
-// Pop-up weergeven
-function showPopup() {
-    const popup = document.getElementById('popup');
-    if (popup) {
-        popup.style.display = 'block'; // Zorg ervoor dat de pop-up zichtbaar is
-        popup.classList.add('show'); // Voeg de 'show' klasse toe voor CSS transities
-        console.log('Pop-up zichtbaar gemaakt');
-    } else {
-        console.error('Pop-up element niet gevonden.');
-    }
-}
+// Sluit het menu automatisch als een link wordt aangeklikt
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('active'); // Verwijder de 'active' klasse van het menu
+        hamburger.classList.remove('active'); // Verwijder de 'active' klasse van de hamburger
+    });
+});
 
-// Pop-up verbergen
-function closePopup() {
-    const popup = document.getElementById('popup');
-    if (popup) {
-        popup.classList.remove('show'); // Verwijder de 'show' klasse om de pop-up te verbergen
-        popup.style.display = 'none'; // Verberg de pop-up volledig
-        console.log('Pop-up verborgen');
-    } else {
-        console.error('Pop-up element niet gevonden.');
-    }
-}
+// Active link highlighting on scroll
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.header__menu li a');
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= 0) {
+            navLinks.forEach(link => {
+                link.classList.remove('active-link');
+                if (link.getAttribute('href').substring(1) === section.id) {
+                    link.classList.add('active-link');
+                }
+            });
+        }
+    });
+});
 
 // Event listener voor formulier verzenden
 document.getElementById('contactForm').addEventListener('submit', function (e) {
